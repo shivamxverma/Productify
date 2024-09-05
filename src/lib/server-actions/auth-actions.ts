@@ -1,7 +1,28 @@
 'use server';
 
+/*
+
+
+
+*/
+
+
 import { z } from 'zod';
+
+/*
+Purpose: Zod is a TypeScript-first schema declaration and validation library. 
+         It helps define and validate input data structures in a type-safe manner. 
+         Here, Zod will be used to ensure that the input to 
+         the functions matches the expected structure defined by FormSchema
+*/
+
 import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
+
+/*
+
+
+
+*/
 import { FormSchema } from '../types';
 import { cookies } from 'next/headers';
 
