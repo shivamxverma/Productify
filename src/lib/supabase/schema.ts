@@ -8,7 +8,7 @@ import {
   timestamp,
   uuid,
 } from 'drizzle-orm/pg-core';
-import { prices, subscriptionStatus } from '../../../migrations/schema';
+import { prices, subscriptionStatus, users, workspaces } from '../../../migrations/schema';
 
 export const workspace = pgTable('workspace', {
     id : uuid('id').defaultRandom().notNull().primaryKey(),
@@ -120,6 +120,16 @@ export const folders = pgTable('folders', {
     }).default(sql`now()`),
   });
   
+export const collaboraters = pgTable('collaborators',{
+  workspceId: uuid('workspace_id').notNull().references(() => workspaces.id,{onDelete: 'cascade'}),
+  createdAt: timestamp('created_at', {
+       withTimezone: true,
+       mode: 'string',
+  }).defaultNow()
+  .notNull(),
+
+  userId: uuid('user_id').notNull().references(() => users.id,{onDelete: 'cascade'}),
   
+})
 
 

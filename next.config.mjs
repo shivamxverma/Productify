@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    experimental: {
-        serviceActions: true,
+    Images: {
+        domains: ['https://nmgtquqjdgfrhcccvqds.supabase.co'],
+    
     },
 };
 

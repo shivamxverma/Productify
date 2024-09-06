@@ -4,13 +4,7 @@ interface LayoutProps {
     params:any;
 }
 const Layout: React.FC<LayoutProps> = ({children,params}) => {
-  return (
-    <div>
-      return <main className='flex over-hidden h-screen'>
-        {children}
-      </main>
-    </div>
-  )
+  return <div className="flex over-hidden h-screen">{children}</div>;
 }
 
 export default Layout
